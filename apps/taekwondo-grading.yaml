@@ -1,0 +1,8 @@
+app_name: "Taekwondo Grading"
+package_name: "com.taekwondograding.app"
+developer_name: "MadeByPatchesPaws"
+developer_email: "madebypatchespaws@gmail.com"
+admob_enabled: true
+personalized_ads: true
+directed_at_children: false
+effective_date: "2026-06-13"
