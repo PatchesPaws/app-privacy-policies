@@ -47,7 +47,14 @@
     {% endif %}
     Google's data practices are governed by the
     <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>.
+    We are not responsible for the content of advertisements served by AdMob or any linked
+    third-party sites.
   </p>
+  {% endif %}
+
+  {% if content_disclaimer %}
+  <h2>Content Accuracy</h2>
+  <p>{{ content_disclaimer }}</p>
   {% endif %}
 
   <h2>3. Children's Privacy</h2>
