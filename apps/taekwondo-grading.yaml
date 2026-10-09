@@ -1,9 +1,9 @@
 app_name: "Taekwondo Grading"
-package_name: "com.taekwondograding.app"
+package_name: "com.madebypatchespaws.taekwondograding"
 developer_name: "MadeByPatchesPaws"
 developer_email: "contactusppd@gmail.com"
-admob_enabled: true
-personalized_ads: true
+admob_enabled: false
+personalized_ads: false
 directed_at_children: false
-effective_date: "2026-06-13"
+effective_date: "2026-10-09"
 content_disclaimer: "The information in this app is provided in good faith for study purposes only. We make no warranties about its completeness or accuracy — your instructor is the authoritative source for grading requirements. Any action you take based on the content is strictly at your own risk."

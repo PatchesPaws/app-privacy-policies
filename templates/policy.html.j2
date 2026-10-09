@@ -26,6 +26,7 @@
   </p>
 
   <h2>1. Information We Collect</h2>
+  {% if admob_enabled %}
   <p>We do not collect personally identifiable information directly. However, the App uses third-party services
   that may collect information as described below.</p>
   <ul>
@@ -33,9 +34,18 @@
     <li><strong>Usage data</strong> – App crashes, performance metrics, and session information collected automatically to improve stability.</li>
     <li><strong>IP address</strong> – May be collected by ad networks for approximate geolocation-based ad targeting and fraud prevention.</li>
   </ul>
+  {% else %}
+  <p>
+    The App does not collect, store, or share any personal information, and it contains no
+    advertising or analytics services. All content is bundled with the App and works offline.
+    Any preferences you set are stored only on your device.
+  </p>
+  {% endif %}
 
+  {% set sec = namespace(n=1) %}
   {% if admob_enabled %}
-  <h2>2. Advertising (Google AdMob)</h2>
+  {% set sec.n = sec.n + 1 %}
+  <h2>{{ sec.n }}. Advertising (Google AdMob)</h2>
   <p>
     The App is monetised with ads served by <strong>Google AdMob</strong>.
     {% if personalized_ads %}
@@ -57,12 +67,13 @@
   <p>{{ content_disclaimer }}</p>
   {% endif %}
 
-  <h2>3. Children's Privacy</h2>
+  {% set sec.n = sec.n + 1 %}
+  <h2>{{ sec.n }}. Children's Privacy</h2>
   {% if directed_at_children %}
   <p>
     This App is directed at children under 13. We comply with the Children's Online Privacy
-    Protection Act (COPPA). We do not knowingly collect personal data from children, and
-    only non-personalised ads are served. Parents or guardians who believe their child has
+    Protection Act (COPPA). We do not knowingly collect personal data from children{% if admob_enabled %}, and
+    only non-personalised ads are served{% endif %}. Parents or guardians who believe their child has
     provided personal data should contact us at <a href="mailto:{{ developer_email }}">{{ developer_email }}</a>.
   </p>
   {% else %}
@@ -73,28 +84,41 @@
   </p>
   {% endif %}
 
-  <h2>4. Data Retention</h2>
+  {% set sec.n = sec.n + 1 %}
+  <h2>{{ sec.n }}. Data Retention</h2>
+  {% if admob_enabled %}
   <p>
     We do not store personal data on our own servers. Data retained by third-party services
     (Google AdMob) is subject to their own retention policies.
   </p>
+  {% else %}
+  <p>
+    We do not store any data on our own servers, and the App does not send data off your device.
+    Preferences stored on your device are deleted when you uninstall the App.
+  </p>
+  {% endif %}
 
-  <h2>5. Your Rights</h2>
+  {% set sec.n = sec.n + 1 %}
+  <h2>{{ sec.n }}. Your Rights</h2>
   <p>Depending on your jurisdiction you may have the right to:</p>
   <ul>
     <li>Access, correct, or delete personal data held about you.</li>
+    {% if admob_enabled %}
     <li>Opt out of personalised advertising (see Section 2).</li>
+    {% endif %}
     <li>Lodge a complaint with your local data protection authority.</li>
   </ul>
   <p>To exercise these rights contact us at <a href="mailto:{{ developer_email }}">{{ developer_email }}</a>.</p>
 
-  <h2>6. Changes to This Policy</h2>
+  {% set sec.n = sec.n + 1 %}
+  <h2>{{ sec.n }}. Changes to This Policy</h2>
   <p>
     We may update this policy from time to time. Changes are effective when posted on this page.
     The effective date at the top of this page reflects the most recent revision.
   </p>
 
-  <h2>7. Contact</h2>
+  {% set sec.n = sec.n + 1 %}
+  <h2>{{ sec.n }}. Contact</h2>
   <p>
     Questions? Email us at <a href="mailto:{{ developer_email }}">{{ developer_email }}</a>.
   </p>
